@@ -18,22 +18,36 @@
   <img src="https://img.shields.io/badge/Deploy-Streamlit_Cloud-FF4B4B?style=flat-square&logo=streamlit"/>
   <img src="https://img.shields.io/badge/Deploy-HuggingFace_Spaces-FFD21E?style=flat-square&logo=huggingface&logoColor=black"/>
   <img src="https://img.shields.io/badge/Deploy-Railway-0B0D0E?style=flat-square&logo=railway"/>
+  <img src="https://img.shields.io/badge/🚀_Live_App-Visit_Now-FF4B4B?style=flat-square&logo=streamlit&logoColor=white"/>
 </p>
 
 <br/>
 
 **A complete, production-ready system for detecting machine learning model drift and monitoring performance — compatible with *any* tabular CSV dataset.**
 
-[🚀 Quick Start](#-quick-start) · [📐 Architecture](#-architecture) · [✨ Features](#-features) · [📊 Detection Methods](#-drift-detection-methods) · [📂 Project Structure](#-project-structure) · [🛠️ Tech Stack](#%EF%B8%8F-tech-stack)
+[🌐 Live Demo](#-live-demo) · [🚀 Quick Start](#-quick-start) · [📐 Architecture](#-architecture) · [✨ Features](#-features) · [📊 Detection Methods](#-drift-detection-methods) · [📂 Project Structure](#-project-structure) · [🛠️ Tech Stack](#%EF%B8%8F-tech-stack)
 
 </div>
+
+---
+
+## 🌐 Live Demo
+
+> **The app is live and fully interactive — no setup required.**
+
+<div align="center">
+
+### 👉 [https://ml-drift-detection---performance-monitoring-nm3yyacwvxecxrjgkg.streamlit.app/](https://ml-drift-detection---performance-monitoring-nm3yyacwvxecxrjgkg.streamlit.app/)
+
+</div>
+
+Open the link, select the built-in **Telco Customer Churn** demo, enable **"Simulate Drift"**, and explore all 6 monitoring pages — no data upload needed.
 
 ---
 
 ## 🌟 What is DriftWatch?
 
 When ML models are deployed to production, the real world changes — but the model doesn't. **Data drift** occurs when the statistical properties of the inputs shift over time, causing predictions to degrade silently. **DriftWatch** continuously monitors your model's data and predictions, alerting you before users notice performance degradation.
-
 ```
 Training Data                Production Data (Weeks Later)
 ─────────────────            ───────────────────────────────
@@ -74,7 +88,6 @@ DriftWatch gives you **6 statistical methods**, **Evidently AI-powered reports**
 ## 📐 Architecture
 
 ### System Overview
-
 ```
 ╔══════════════════════════════════════════════════════════════╗
 ║                       DRIFTWATCH v2.0                        ║
@@ -139,7 +152,6 @@ DriftWatch gives you **6 statistical methods**, **Evidently AI-powered reports**
 ```
 
 ### Application Flow
-
 ```
 User Opens App
      │
@@ -191,8 +203,8 @@ User Opens App
 ### Local Development
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/driftwatch.git
-cd driftwatch
+git clone https://github.com/Saksham653/ML-DRIFT-DETECTION---PERFORMANCE-MONITORING.git
+cd ML-DRIFT-DETECTION---PERFORMANCE-MONITORING
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -204,7 +216,6 @@ streamlit run app.py
 The app opens at `http://localhost:8501`. The built-in **Telco Customer Churn** dataset loads automatically with synthetic drift applied — no uploads needed to explore.
 
 ### ☁️ Deploy to Streamlit Cloud *(Free)*
-
 ```
 1. Push to a public GitHub repository
 2. Visit https://share.streamlit.io
@@ -213,7 +224,6 @@ The app opens at `http://localhost:8501`. The built-in **Telco Customer Churn** 
 ```
 
 ### 🤗 Deploy to Hugging Face Spaces *(Free)*
-
 ```
 1. Create new Space at https://huggingface.co/spaces
 2. Select Streamlit as the SDK
@@ -222,7 +232,6 @@ The app opens at `http://localhost:8501`. The built-in **Telco Customer Churn** 
 ```
 
 ### 🚂 Deploy to Railway / Render
-
 ```bash
 # Add a Procfile to the project root:
 echo "web: streamlit run app.py --server.port=\$PORT --server.address=0.0.0.0" > Procfile
@@ -231,7 +240,6 @@ echo "web: streamlit run app.py --server.port=\$PORT --server.address=0.0.0.0" >
 ---
 
 ## 📂 Project Structure
-
 ```
 driftwatch/
 │
@@ -286,7 +294,6 @@ DriftWatch runs **multiple statistical tests simultaneously** so no drift goes u
 | **PSI (categorical)** | Category frequency stability over time | `PSI > 0.20` |
 
 ### Drift Score Interpretation
-
 ```
 PSI Score    │ Interpretation             │ Status
 ─────────────┼────────────────────────────┼──────────────
@@ -302,7 +309,6 @@ KS p-value   │ Interpretation
 ```
 
 ### Dataset-level Status
-
 ```
 Drift Ratio   │ System Status
 ──────────────┼──────────────────────
@@ -316,7 +322,6 @@ Drift Ratio   │ System Status
 ## 🖥️ App Pages
 
 ### 📂 Page 1 — Data Setup
-
 ```
 ┌──────────────────────────────────────────┐
 │  📋 Reference Dataset    🔄 Current Dataset │
@@ -345,7 +350,6 @@ Drift Ratio   │ System Status
 ### 🔬 Page 2 — Feature Drift Analysis
 
 Four sub-tabs in one powerful view:
-
 ```
 [ 📊 Heatmap ] [ 📋 Feature Table ] [ 🔍 Distributions ] [ 📈 Predictions ]
 ```
@@ -358,7 +362,6 @@ Four sub-tabs in one powerful view:
 ---
 
 ### 🤖 Page 3 — Model Performance
-
 ```
 ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
 │ ACCURACY │  │   F1     │  │ ROC-AUC  │  │    R²    │
@@ -391,7 +394,6 @@ Full HTML reports rendered inline — each can be downloaded as a standalone HTM
 ---
 
 ### 📈 Page 5 — Live Monitoring Dashboard
-
 ```
         🔴  MODEL STATUS: HIGH RISK
     4 of 20 features drifted · 20.0% drift ratio · Session 3
@@ -417,7 +419,6 @@ Full HTML reports rendered inline — each can be downloaded as a standalone HTM
 ---
 
 ### 📥 Page 6 — Export Reports
-
 ```
 ┌─────────────────────────┐  ┌─────────────────────────┐
 │  📄 JSON Report          │  │  📊 CSV Report           │
@@ -434,7 +435,6 @@ Full HTML reports rendered inline — each can be downloaded as a standalone HTM
 ---
 
 ## 🛠️ Tech Stack
-
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  Layer              Library              Purpose             │
@@ -455,7 +455,6 @@ Full HTML reports rendered inline — each can be downloaded as a standalone HTM
 ## ⚙️ Configuration
 
 Drift thresholds can be adjusted live from the **sidebar** without restarting:
-
 ```python
 # Default thresholds (configurable via sidebar sliders)
 DriftDetector(
@@ -474,7 +473,6 @@ DriftDetector(
 ---
 
 ## 📦 Dependencies
-
 ```txt
 streamlit>=1.32.0
 pandas>=2.0.0
@@ -487,7 +485,6 @@ plotly>=5.18.0,<6
 ```
 
 Install all at once:
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -559,7 +556,6 @@ pip install -r requirements.txt
 ---
 
 ## 🗺️ Usage Walkthrough
-
 ```
 Step 1 ─── Open the app → Data Setup tab
             ☑ Use built-in Telco Churn demo
@@ -598,7 +594,6 @@ Step 6 ─── Navigate to: Export Reports
 ## 🔄 Simulation Mode
 
 DriftWatch includes a built-in **drift simulator** for demo and testing purposes:
-
 ```python
 # Synthetic drift applied automatically in simulation mode
 for col in num_cols[:4]:
@@ -614,7 +609,6 @@ This triggers **KS drift** and **PSI alerts** on 4 numerical features, pushing t
 ## 📤 Export Format
 
 ### JSON Report Structure
-
 ```json
 {
   "summary": {
@@ -648,7 +642,6 @@ This triggers **KS drift** and **PSI alerts** on 4 numerical features, pushing t
 ---
 
 ## 🤝 Contributing
-
 ```bash
 # Fork → Clone → Create branch
 git checkout -b feature/new-drift-method
@@ -677,5 +670,7 @@ MIT License — free to use, modify, and distribute.
 **Built with ❤️ by [Saksham Srivastava](mailto:sakshamsrivastava7000@gmail.com)**
 
 *DriftWatch — Know before your users do.*
+
+[![Live App](https://img.shields.io/badge/🚀_Try_It_Live-DriftWatch-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://ml-drift-detection---performance-monitoring-nm3yyacwvxecxrjgkg.streamlit.app/)
 
 </div>
